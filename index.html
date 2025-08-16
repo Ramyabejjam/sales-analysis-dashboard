@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Analysis Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📊 Sales Analysis Dashboard</h1>
+  </header>
+
+  <section class="filters">
+    <label for="yearFilter">Year:</label>
+    <select id="yearFilter"></select>
+
+    <label for="regionFilter">Region:</label>
+    <select id="regionFilter"></select>
+
+    <label for="categoryFilter">Category:</label>
+    <select id="categoryFilter"></select>
+
+    <button id="resetFilters">Reset</button>
+  </section>
+
+  <section class="kpis">
+    <div class="kpi-card">
+      <h3>Total Revenue</h3>
+      <p id="totalRevenue">$0</p>
+    </div>
+    <div class="kpi-card">
+      <h3>Total Profit</h3>
+      <p id="totalProfit">$0</p>
+    </div>
+    <div class="kpi-card">
+      <h3>Units Sold</h3>
+      <p id="unitsSold">0</p>
+    </div>
+    <div class="kpi-card">
+      <h3>Avg Order Value</h3>
+      <p id="avgOrderValue">$0</p>
+    </div>
+  </section>
+
+  <section class="charts">
+    <div class="chart-container">
+      <canvas id="revenueTrend"></canvas>
+    </div>
+    <div class="chart-container">
+      <canvas id="categoryBreakdown"></canvas>
+    </div>
+    <div class="chart-container">
+      <canvas id="regionBreakdown"></canvas>
+    </div>
+  </section>
+
+  <section class="table-section">
+    <h2>Top Products by Revenue</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Revenue</th>
+        </tr>
+      </thead>
+      <tbody id="topProducts"></tbody>
+    </table>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
